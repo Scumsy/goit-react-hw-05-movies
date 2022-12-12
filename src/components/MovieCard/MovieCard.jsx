@@ -1,5 +1,6 @@
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { HiArrowSmLeft } from 'react-icons/hi';
+import PropTypes from 'prop-types';
 import {
   Container,
   Poster,
@@ -12,6 +13,7 @@ import {
 export const MovieCard = ({ item }) => {
   const filmId = item.id;
   const location = useLocation();
+  console.log(item);
 
   return (
     <main>
@@ -66,4 +68,8 @@ export const MovieCard = ({ item }) => {
       <Outlet />
     </main>
   );
+};
+
+MovieCard.propTypes = {
+  item: PropTypes.object.isRequired,
 };
